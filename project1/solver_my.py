@@ -2,7 +2,7 @@
 import numpy as np
 
 
-def solve_ivp(func, t_span, y0, t_eval, args, method="Euler"):
+def solve_ivp(func, t_span, y0, t_eval, method, *args):
     """
     A general solver to solve IVPs.
     func: function with variables t, y, and args.
@@ -10,7 +10,7 @@ def solve_ivp(func, t_span, y0, t_eval, args, method="Euler"):
     y0: initial y. Need to use 1d list or ndarray(1,:).
     t_eval: seperation time of steps.
     args: parameters used in func.
-    method: "Euler"(default), "RK2", and "RK4".
+    method: "Euler", "RK2", and "RK4".
     return: (y(t), t), y[:,i] is evaluation of y0[i].
     """
     dt = t_eval
