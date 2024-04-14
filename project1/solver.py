@@ -106,7 +106,7 @@ def _update_euler(derive_func, y0, dt, t, *args):
 
     y = y0 + dt * derive_func(t, y0, *args)
 
-    return y  # <- change here. just a placeholder
+    return y
 
 
 def _update_rk2(derive_func, y0, dt, t, *args):
@@ -120,7 +120,7 @@ def _update_rk2(derive_func, y0, dt, t, *args):
     k2 = derive_func(t + dt, y0 + dt * k1, *args)
     y = y0 + 0.5 * dt * (k1 + k2)
 
-    return y  # <- change here. just a placeholder
+    return y
 
 
 def _update_rk4(derive_func, y0, dt, t, *args):
@@ -136,7 +136,7 @@ def _update_rk4(derive_func, y0, dt, t, *args):
     k4 = derive_func(t + dt, y0 + dt * k3, *args)
     y = y0 + dt * (k1 + 2 * k2 + 2 * k3 + k4) / 6
 
-    return y  # <- change here. just a placeholder
+    return y
 
 
 if __name__ == "__main__":
@@ -183,4 +183,3 @@ if __name__ == "__main__":
 
     plt.plot(t_eval, sol[0, :])
     plt.show()
-    print("Done!")
